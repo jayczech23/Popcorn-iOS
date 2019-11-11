@@ -8,6 +8,8 @@ target 'Popcorn' do
   # Pods for Popcorn
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'Kingfisher', '~> 5.0'
+
 
   target 'PopcornTests' do
     inherit! :search_paths

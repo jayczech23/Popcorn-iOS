@@ -12,13 +12,7 @@ class Movie : MovieProtocol  {
     internal var title = ""
     internal var description = ""
     internal var imageUrl = ""
-    
-    enum Classification {
-        case Latest
-        case NowPlaying
-        case Popular
-    }
-    
+
     init(title: String,
          description: String,
          imageUrl: String) {

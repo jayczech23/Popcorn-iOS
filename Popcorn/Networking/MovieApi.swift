@@ -14,7 +14,7 @@ class MovieApi : MovieApiProtocol {
     
     let baseUrl: String = "https://api.themoviedb.org/3/"
     
-    var imageUrlPrefix: String = "https://image.tmdb.org/t/p/w500/"
+    var imageUrlPrefix: String = "https://image.tmdb.org/t/p/w500"
     
     func getNowPlaying(_ completion: @escaping ([Movie?]) -> Void) {
         makeRequest(getNowPlayingEndpoint(), completion)
@@ -57,7 +57,7 @@ class MovieApi : MovieApiProtocol {
                             imageSize = value.stringValue
                         }
                     }
-                    self.imageUrlPrefix = "\(baseImageUrl)\(imageSize)/"
+                    self.imageUrlPrefix = "\(baseImageUrl)\(imageSize)"
                     completion(self.imageUrlPrefix)
                 }
             } catch let error {
@@ -92,7 +92,7 @@ class MovieApi : MovieApiProtocol {
         let title = jsonObject[TITLE_KEY].stringValue
         let desc = jsonObject[DESCRIPTION_KEY].stringValue
         if let posterImage = jsonObject[POSTER_IMAGE_KEY].string {
-            imageUrl = "\(self.imageUrlPrefix)\(posterImage))"
+            imageUrl = "\(self.imageUrlPrefix)\(posterImage)"
         }
         return Movie(title: title, description: desc, imageUrl: imageUrl)
     }

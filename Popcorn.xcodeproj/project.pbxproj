@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		29A868A83C31E3E77FE86AB5 /* Pods_Popcorn_PopcornUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB60D9E303815A5F6BFF971 /* Pods_Popcorn_PopcornUITests.framework */; };
 		3C9B90471824E71B9AFEC542 /* Pods_PopcornTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70CC5419AD65459A58F8F7 /* Pods_PopcornTests.framework */; };
+		4749428D237A0975005B7A05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4749428C237A0975005B7A05 /* Main.storyboard */; };
+		4749428F237A0DE5005B7A05 /* PopcornVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749428E237A0DE5005B7A05 /* PopcornVC.swift */; };
+		474942B1237A14BE005B7A05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474942B0237A14BE005B7A05 /* SceneDelegate.swift */; };
 		47DA4B312378A75F005C5280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA4B302378A75F005C5280 /* AppDelegate.swift */; };
-		47DA4B332378A75F005C5280 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA4B322378A75F005C5280 /* SceneDelegate.swift */; };
-		47DA4B352378A75F005C5280 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA4B342378A75F005C5280 /* ContentView.swift */; };
 		47DA4B372378A760005C5280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47DA4B362378A760005C5280 /* Assets.xcassets */; };
-		47DA4B3A2378A760005C5280 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47DA4B392378A760005C5280 /* Preview Assets.xcassets */; };
 		47DA4B3D2378A760005C5280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DA4B3B2378A760005C5280 /* LaunchScreen.storyboard */; };
 		47DA4B482378A760005C5280 /* PopcornTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA4B472378A760005C5280 /* PopcornTests.swift */; };
 		47DA4B532378A760005C5280 /* PopcornUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA4B522378A760005C5280 /* PopcornUITests.swift */; };
@@ -46,12 +46,12 @@
 
 /* Begin PBXFileReference section */
 		3A70CC5419AD65459A58F8F7 /* Pods_PopcornTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopcornTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4749428C237A0975005B7A05 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4749428E237A0DE5005B7A05 /* PopcornVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopcornVC.swift; sourceTree = "<group>"; };
+		474942B0237A14BE005B7A05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		47DA4B2D2378A75F005C5280 /* Popcorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DA4B302378A75F005C5280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		47DA4B322378A75F005C5280 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		47DA4B342378A75F005C5280 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		47DA4B362378A760005C5280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		47DA4B392378A760005C5280 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		47DA4B3C2378A760005C5280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47DA4B3E2378A760005C5280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47DA4B432378A760005C5280 /* PopcornTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopcornTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,18 +138,11 @@
 				47DA4B362378A760005C5280 /* Assets.xcassets */,
 				47DA4B3B2378A760005C5280 /* LaunchScreen.storyboard */,
 				47DA4B3E2378A760005C5280 /* Info.plist */,
-				47DA4B382378A760005C5280 /* Preview Content */,
 				47DA4B732378D808005C5280 /* constants.swift */,
+				4749428C237A0975005B7A05 /* Main.storyboard */,
+				474942B0237A14BE005B7A05 /* SceneDelegate.swift */,
 			);
 			path = Popcorn;
-			sourceTree = "<group>";
-		};
-		47DA4B382378A760005C5280 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				47DA4B392378A760005C5280 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		47DA4B462378A760005C5280 /* PopcornTests */ = {
@@ -184,8 +177,6 @@
 		47DA4B612378A960005C5280 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				47DA4B342378A75F005C5280 /* ContentView.swift */,
-				47DA4B322378A75F005C5280 /* SceneDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +184,7 @@
 		47DA4B622378A966005C5280 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4749428E237A0DE5005B7A05 /* PopcornVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,7 +218,6 @@
 				AA974E0C72C48E2D3CDA60A2 /* Pods-PopcornTests.debug.xcconfig */,
 				823EDF94CBEB0A25D354B651 /* Pods-PopcornTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -340,7 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47DA4B3D2378A760005C5280 /* LaunchScreen.storyboard in Resources */,
-				47DA4B3A2378A760005C5280 /* Preview Assets.xcassets in Resources */,
+				4749428D237A0975005B7A05 /* Main.storyboard in Resources */,
 				47DA4B372378A760005C5280 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,11 +463,11 @@
 				47DA4B682378ADAA005C5280 /* MovieProtocol.swift in Sources */,
 				47DA4B6B2378D30D005C5280 /* MovieApiProtocol.swift in Sources */,
 				47DA4B312378A75F005C5280 /* AppDelegate.swift in Sources */,
-				47DA4B332378A75F005C5280 /* SceneDelegate.swift in Sources */,
+				4749428F237A0DE5005B7A05 /* PopcornVC.swift in Sources */,
 				47DA4B662378AD2E005C5280 /* Movie.swift in Sources */,
-				47DA4B352378A75F005C5280 /* ContentView.swift in Sources */,
 				47DA4B6F2378D38D005C5280 /* MovieApi.swift in Sources */,
 				47DA4B742378D808005C5280 /* constants.swift in Sources */,
+				474942B1237A14BE005B7A05 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +636,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Popcorn/Preview Content\"";
 				DEVELOPMENT_TEAM = 88CU63AVYG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Popcorn/Info.plist;
@@ -666,7 +656,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Popcorn/Preview Content\"";
 				DEVELOPMENT_TEAM = 88CU63AVYG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Popcorn/Info.plist;
