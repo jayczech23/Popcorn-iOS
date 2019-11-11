@@ -10,8 +10,11 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-struct MovieApi : MovieApiProtocol {
-    let baseUrl: String = "https://api.themoviedb.org/3/movie/"
+class MovieApi : MovieApiProtocol {
+    
+    let baseUrl: String = "https://api.themoviedb.org/3/"
+    
+    var imageUrlPrefix: String = "https://image.tmdb.org/t/p/w500/"
     
     func getNowPlaying(_ completion: @escaping ([Movie?]) -> Void) {
         makeRequest(getNowPlayingEndpoint(), completion)
@@ -26,15 +29,41 @@ struct MovieApi : MovieApiProtocol {
     }
     
     func getLatestEndpoint() -> String {
-        return "\(baseUrl)latest?api_key=\(getApiKey())&language=en-US"
+        return "\(baseUrl)movie/latest?api_key=\(getApiKey())&language=en-US"
     }
     
     func getNowPlayingEndpoint() -> String {
-        return "\(baseUrl)now_playing?api_key=\(getApiKey())&language=en-US&page=1"
+        return "\(baseUrl)movie/now_playing?api_key=\(getApiKey())&language=en-US&page=1"
     }
     
     func getPopularEndpoint() -> String {
-        return "\(baseUrl)popular?api_key=\(getApiKey())&language=en-US&page=1"
+        return "\(baseUrl)movie/popular?api_key=\(getApiKey())&language=en-US&page=1"
+    }
+    
+    func getConfigEndpoint() -> String {
+        return "\(baseUrl)configuration?api_key=\(getApiKey())"
+    }
+    
+    func getConfigurationUrl(_ completion: @escaping ((String) -> Void)) {
+        AF.request(getConfigEndpoint()).validate().responseJSON { (response) in
+            do {
+                if let data = response.data {
+                    var imageSize = ""
+                    let json = try JSON(data: data)
+                    let baseImageUrl = json["images"][BASE_IMAGE_URL_KEY].stringValue
+                    let sizes = json["images"][POSTER_SIZES_KEY].arrayValue
+                    for value in sizes {
+                        if value.stringValue == "w500" {
+                            imageSize = value.stringValue
+                        }
+                    }
+                    self.imageUrlPrefix = "\(baseImageUrl)\(imageSize)/"
+                    completion(self.imageUrlPrefix)
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     private func makeRequest(_ endpoint: String, _ completion: @escaping ([Movie?]) -> Void) {
@@ -59,9 +88,12 @@ struct MovieApi : MovieApiProtocol {
     }
     
     private func populateMovieObject(jsonObject: JSON) -> Movie {
+        var imageUrl = ""
         let title = jsonObject[TITLE_KEY].stringValue
         let desc = jsonObject[DESCRIPTION_KEY].stringValue
-        let imageUrl = "foo"
+        if let posterImage = jsonObject[POSTER_IMAGE_KEY].string {
+            imageUrl = "\(self.imageUrlPrefix)\(posterImage))"
+        }
         return Movie(title: title, description: desc, imageUrl: imageUrl)
     }
     

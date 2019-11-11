@@ -12,6 +12,7 @@ import XCTest
 class MovieApiTest: XCTestCase {
     
     var api: MovieApiProtocol!
+    var key: String!
 
     override func setUp() {
         api = MovieApi()
@@ -22,20 +23,26 @@ class MovieApiTest: XCTestCase {
     }
     
     func testGetLatestEndpoint() {
-        let expected = "https://api.themoviedb.org/3/movie/latest?api_key=\(MovieApi().getApiKey())&language=en-US"
+        let expected = "\(api.baseUrl)movie/latest?api_key=\(MovieApi().getApiKey())&language=en-US"
         let result = api.getLatestEndpoint()
         XCTAssertEqual(result, expected)
     }
     
     func testGetNowPlayingEndpoint() {
-        let expected = "\(api.baseUrl)now_playing?api_key=\(MovieApi().getApiKey())&language=en-US&page=1"
+        let expected = "\(api.baseUrl)movie/now_playing?api_key=\(MovieApi().getApiKey())&language=en-US&page=1"
         let result = api.getNowPlayingEndpoint()
         XCTAssertEqual(result, expected)
     }
     
     func testGetPopularEndpoint() {
-        let expected = "\(api.baseUrl)popular?api_key=\(MovieApi().getApiKey())&language=en-US&page=1"
+        let expected = "\(api.baseUrl)movie/popular?api_key=\(MovieApi().getApiKey())&language=en-US&page=1"
         let result = api.getPopularEndpoint()
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testGetConfigEndpoint() {
+        let expected = "\(api.baseUrl)configuration?api_key=\(MovieApi().getApiKey())"
+        let result = api.getConfigEndpoint()
         XCTAssertEqual(result, expected)
     }
     
@@ -47,6 +54,7 @@ class MovieApiTest: XCTestCase {
                 XCTAssertNotNil(latest)
                 XCTAssertFalse(latest?.title.isEmpty ?? true)
                 XCTAssertFalse(latest?.description.isEmpty ?? true)
+                XCTAssertNotNil(latest?.imageUrl)
             }
             expect.fulfill()
         }
@@ -66,6 +74,7 @@ class MovieApiTest: XCTestCase {
                 XCTAssertNotNil(movie)
                 XCTAssertFalse(movie?.title.isEmpty ?? true)
                 XCTAssertFalse(movie?.description.isEmpty ?? true)
+                XCTAssertNotNil(movie?.imageUrl)
             }
             expect.fulfill()
         }
@@ -85,7 +94,23 @@ class MovieApiTest: XCTestCase {
                 XCTAssertNotNil(movie)
                 XCTAssertFalse(movie?.title.isEmpty ?? true)
                 XCTAssertFalse(movie?.description.isEmpty ?? true)
+                XCTAssertNotNil(movie?.imageUrl)
             }
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 20) { (error) in
+            if error != nil {
+                XCTFail("error: \(error!.localizedDescription)")
+            }
+        }
+    }
+    
+    func testGetConfigurationForImage() {
+        let expect = expectation(description: "Expecting base image url to prepend for movie images")
+        api.getConfigurationUrl { (imageUrlPrefix) in
+            XCTAssertNotNil(imageUrlPrefix)
+            XCTAssertFalse(imageUrlPrefix.isEmpty)
             expect.fulfill()
         }
         
