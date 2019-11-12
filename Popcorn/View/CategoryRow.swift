@@ -13,12 +13,7 @@ class CategoryRow: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let cellId = "movieCell"
-    var nowPlayingMovies: [Movie]? = nil {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
-    var popularMovies: [Movie]? = nil {
+    var movies: [Movie]? = nil {
         didSet {
             collectionView.reloadData()
         }
@@ -27,26 +22,12 @@ class CategoryRow: UITableViewCell {
 
 extension CategoryRow : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return nowPlayingMovies?.count ?? 0
-        case 1:
-            return popularMovies?.count ?? 0
-        default:
-            return 0
-        }
+        return movies?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId, for: indexPath) as! MovieCell
-        switch indexPath.section {
-        case 0:
-            cell.movie = nowPlayingMovies?[indexPath.row]
-        case 1:
-            cell.movie = popularMovies?[indexPath.row]
-        default:
-            cell.movie = Movie(title: "foo", description: "foo", imageUrl: "foo")
-        }
+        cell.movie = movies?[indexPath.row]
         return cell
     }
 }

@@ -42,20 +42,15 @@ class PopcornVC: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CategoryRow
-        
-        switch indexPath.section {
-        case 0:
-            // now playing
+        print("Table view section: \(indexPath.section)")
+        if indexPath.section == 0 {
             api.getNowPlaying { (movies) in
-                cell.nowPlayingMovies = movies as! [Movie]
+                cell.movies = movies as! [Movie]
             }
-        case 1:
-            // popular
+        } else {
             api.getPopular { (movies) in
-                cell.popularMovies = movies as! [Movie]
+                cell.movies = movies as! [Movie]
             }
-        default:
-            return cell 
         }
         return cell
     }
