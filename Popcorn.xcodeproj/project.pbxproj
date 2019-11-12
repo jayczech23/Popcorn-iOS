@@ -14,6 +14,7 @@
 		474942B1237A14BE005B7A05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474942B0237A14BE005B7A05 /* SceneDelegate.swift */; };
 		474942B3237A26CE005B7A05 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474942B2237A26CE005B7A05 /* CategoryRow.swift */; };
 		474942B5237A364F005B7A05 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474942B4237A364F005B7A05 /* MovieCell.swift */; };
+		474942B7237A4F04005B7A05 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474942B6237A4F04005B7A05 /* MovieDetailVC.swift */; };
 		47DA4B312378A75F005C5280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA4B302378A75F005C5280 /* AppDelegate.swift */; };
 		47DA4B372378A760005C5280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47DA4B362378A760005C5280 /* Assets.xcassets */; };
 		47DA4B3D2378A760005C5280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DA4B3B2378A760005C5280 /* LaunchScreen.storyboard */; };
@@ -52,6 +53,7 @@
 		474942B0237A14BE005B7A05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		474942B2237A26CE005B7A05 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		474942B4237A364F005B7A05 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		474942B6237A4F04005B7A05 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
 		47DA4B2D2378A75F005C5280 /* Popcorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DA4B302378A75F005C5280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47DA4B362378A760005C5280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				4749428E237A0DE5005B7A05 /* PopcornVC.swift */,
+				474942B6237A4F04005B7A05 /* MovieDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				47DA4B312378A75F005C5280 /* AppDelegate.swift in Sources */,
 				4749428F237A0DE5005B7A05 /* PopcornVC.swift in Sources */,
 				47DA4B662378AD2E005C5280 /* Movie.swift in Sources */,
+				474942B7237A4F04005B7A05 /* MovieDetailVC.swift in Sources */,
 				47DA4B6F2378D38D005C5280 /* MovieApi.swift in Sources */,
 				47DA4B742378D808005C5280 /* constants.swift in Sources */,
 				474942B3237A26CE005B7A05 /* CategoryRow.swift in Sources */,
