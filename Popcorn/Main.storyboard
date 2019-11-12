@@ -158,12 +158,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aai-iG-qGo">
                                 <rect key="frame" x="20" y="79" width="374" height="403"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riw-NK-RHd">
-                                <rect key="frame" x="352" y="490" width="47" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Overview" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZKA-ob-vGz">
                                 <rect key="frame" x="20" y="551" width="374" height="247"/>
                                 <constraints>
@@ -179,9 +173,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riw-NK-RHd">
+                                <rect key="frame" x="347" y="490" width="47" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="riw-NK-RHd" firstAttribute="top" secondItem="Aai-iG-qGo" secondAttribute="bottom" constant="8" id="6T0-wb-MNU"/>
+                            <constraint firstItem="lyX-xd-Fxg" firstAttribute="trailing" secondItem="riw-NK-RHd" secondAttribute="trailing" constant="20" id="9Vr-Ip-fHw"/>
                             <constraint firstItem="lyX-xd-Fxg" firstAttribute="bottom" secondItem="ZKA-ob-vGz" secondAttribute="bottom" constant="10" id="9gS-HG-KIw"/>
                             <constraint firstItem="ZKA-ob-vGz" firstAttribute="trailing" secondItem="Aai-iG-qGo" secondAttribute="trailing" id="F3e-MV-Fcp"/>
                             <constraint firstItem="lyX-xd-Fxg" firstAttribute="trailing" secondItem="oe2-aM-Zwl" secondAttribute="trailing" constant="20" id="K1L-Gb-b1N"/>
@@ -189,12 +191,9 @@
                             <constraint firstItem="ZKA-ob-vGz" firstAttribute="leading" secondItem="Aai-iG-qGo" secondAttribute="leading" id="Uwy-G3-O1G"/>
                             <constraint firstItem="oe2-aM-Zwl" firstAttribute="top" secondItem="lyX-xd-Fxg" secondAttribute="top" constant="20" id="VN0-Il-hMG"/>
                             <constraint firstItem="oe2-aM-Zwl" firstAttribute="leading" secondItem="lyX-xd-Fxg" secondAttribute="leading" constant="20" id="WQv-K0-TPo"/>
-                            <constraint firstItem="lyX-xd-Fxg" firstAttribute="trailing" secondItem="riw-NK-RHd" secondAttribute="trailing" constant="15" id="Wfa-93-epP"/>
                             <constraint firstItem="Aai-iG-qGo" firstAttribute="top" secondItem="oe2-aM-Zwl" secondAttribute="bottom" constant="23" id="d4W-nu-c2q"/>
                             <constraint firstItem="riw-NK-RHd" firstAttribute="top" secondItem="Aai-iG-qGo" secondAttribute="bottom" constant="8" id="gJm-HR-8Op"/>
-                            <constraint firstItem="riw-NK-RHd" firstAttribute="leading" secondItem="lyX-xd-Fxg" secondAttribute="leading" constant="352" id="hGT-4E-gCU"/>
                             <constraint firstItem="Aai-iG-qGo" firstAttribute="leading" secondItem="lyX-xd-Fxg" secondAttribute="leading" constant="20" id="ml0-Xk-V0f"/>
-                            <constraint firstItem="lyX-xd-Fxg" firstAttribute="trailing" secondItem="riw-NK-RHd" secondAttribute="trailing" constant="15" id="nDS-ds-Xhg"/>
                             <constraint firstItem="lyX-xd-Fxg" firstAttribute="trailing" secondItem="Aai-iG-qGo" secondAttribute="trailing" constant="20" id="qUB-O5-8eA"/>
                             <constraint firstItem="riw-NK-RHd" firstAttribute="top" secondItem="Aai-iG-qGo" secondAttribute="bottom" constant="8" id="xX5-ME-jMx"/>
                         </constraints>
