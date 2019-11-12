@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 protocol MovieApiProtocol {
     var baseUrl: String { get }
