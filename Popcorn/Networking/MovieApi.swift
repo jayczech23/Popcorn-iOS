@@ -91,10 +91,11 @@ class MovieApi : MovieApiProtocol {
         var imageUrl = ""
         let title = jsonObject[TITLE_KEY].stringValue
         let desc = jsonObject[DESCRIPTION_KEY].stringValue
+        let genre = ""
         if let posterImage = jsonObject[POSTER_IMAGE_KEY].string {
             imageUrl = "\(self.imageUrlPrefix)\(posterImage)"
         }
-        return Movie(title: title, description: desc, imageUrl: imageUrl)
+        return Movie(title: title, description: desc, imageUrl: imageUrl, genre: genre)
     }
     
     func getApiKey() -> String {

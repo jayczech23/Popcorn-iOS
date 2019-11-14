@@ -54,6 +54,7 @@ class MovieApiTest: XCTestCase {
                 XCTAssertNotNil(latest)
                 XCTAssertFalse(latest?.title.isEmpty ?? true)
                 XCTAssertFalse(latest?.description.isEmpty ?? true)
+                XCTAssertFalse(latest?.genre.isEmpty ?? true)
                 XCTAssertNotNil(latest?.imageUrl)
             }
             expect.fulfill()
@@ -74,6 +75,7 @@ class MovieApiTest: XCTestCase {
                 XCTAssertNotNil(movie)
                 XCTAssertFalse(movie?.title.isEmpty ?? true)
                 XCTAssertFalse(movie?.description.isEmpty ?? true)
+                XCTAssertFalse(movie?.genre.isEmpty ?? true)
                 XCTAssertNotNil(movie?.imageUrl)
             }
             expect.fulfill()
@@ -94,6 +96,7 @@ class MovieApiTest: XCTestCase {
                 XCTAssertNotNil(movie)
                 XCTAssertFalse(movie?.title.isEmpty ?? true)
                 XCTAssertFalse(movie?.description.isEmpty ?? true)
+                XCTAssertFalse(movie?.genre.isEmpty ?? true)
                 XCTAssertNotNil(movie?.imageUrl)
             }
             expect.fulfill()

@@ -14,7 +14,7 @@ class MovieModelTest: XCTestCase {
     private var movie: Movie!
     
     override func setUp() {
-        movie = Movie(title: "Test", description: "Foo", imageUrl: "Bar")
+        movie = Movie(title: "Test", description: "Foo", imageUrl: "Bar", genre: "Action")
     }
     
     func testLatestMovie() {
@@ -33,6 +33,7 @@ class MovieModelTest: XCTestCase {
         XCTAssertFalse(movie.title.isEmpty)
         XCTAssertFalse(movie.description.isEmpty)
         XCTAssertFalse(movie.imageUrl.isEmpty)
+        XCTAssertFalse(movie.genre.isEmpty)
     }
     
 }

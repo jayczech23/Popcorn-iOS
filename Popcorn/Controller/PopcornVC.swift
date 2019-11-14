@@ -81,7 +81,8 @@ class PopcornVC: UIViewController, UITableViewDataSource {
                 }
                 self.latestMovie = Movie(title: movie.title,
                                          description: movie.description,
-                                         imageUrl: movie.imageUrl)
+                                         imageUrl: movie.imageUrl,
+                                         genre: movie.genre)
             }
         }
     }
